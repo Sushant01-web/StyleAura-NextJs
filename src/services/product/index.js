@@ -137,6 +137,12 @@
 
 import Cookies from "js-cookie";
 
+const BASE_URL =
+  typeof window === "undefined"
+    ? process.env.NEXT_PUBLIC_SITE_URL
+    : "";
+
+
 /* ---------------- UPLOAD PRODUCT IMAGE ---------------- */
 export const uploadProductImage = async (file) => {
   try {
@@ -176,12 +182,28 @@ export const addNewProduct = async (formData) => {
 };
 
 /* ---------------- GET ALL ADMIN PRODUCTS ---------------- */
+// export const getAllAdminProducts = async () => {
+//   try {
+//     const res = await fetch("/api/admin/all-products", {
+//       method: "GET",
+//       cache: "no-store",
+//     });
+
+//     return await res.json();
+//   } catch (error) {
+//     console.error("Get all admin products error:", error);
+//     return { success: false };
+//   }
+// };
 export const getAllAdminProducts = async () => {
   try {
-    const res = await fetch("/api/admin/all-products", {
-      method: "GET",
-      cache: "no-store",
-    });
+    const res = await fetch(
+      `${BASE_URL}/api/admin/all-products`,
+      {
+        method: "GET",
+        cache: "no-store",
+      }
+    );
 
     return await res.json();
   } catch (error) {
@@ -189,6 +211,8 @@ export const getAllAdminProducts = async () => {
     return { success: false };
   }
 };
+
+
 
 /* ---------------- UPDATE PRODUCT ---------------- */
 export const updateAProduct = async (formData) => {
