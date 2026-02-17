@@ -44,7 +44,7 @@ export default function CommonDetails({ item }) {
               <div className="lg:order-2 lg:ml-5">
                 <div className="max-w-xl overflow-hidden rounded-lg">
 <img
-  src={item?.imageUrl?.[0] || "/placeholder.png"}
+  src={item?.imageUrl}
   className="h-full w-full object-cover"
   alt="Product Details"
 />
@@ -69,7 +69,7 @@ export default function CommonDetails({ item }) {
                     className="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 border-gray-100 text-center"
                   >
 <img
-  src={item?.imageUrl?.[0] || "/placeholder.png"}
+  src={item?.imageUrl}
   className="h-full w-full object-cover"
   alt="Product Details"
 />
