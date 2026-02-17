@@ -46,7 +46,7 @@ export default function CommonDetails({ item }) {
 <img
   src={item?.imageUrl}
   className="h-full w-full object-cover"
-  alt="Product Details"
+  alt="Product "
 />
 
 
