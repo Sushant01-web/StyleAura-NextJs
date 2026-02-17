@@ -23,15 +23,19 @@ export default function CommonCart({
                     {cartItems.map((cartItem) => (
                       <li
                         className="flex-col flex space-y-3 py-6 text-left sm:flex-row sm:space-x-5 sm:space-y-0"
-                        key={cartItem.id}
+                        key={cartItem._id}
                       >
                         <div className="shrink-0">
                           <img
+                            // src={
+                            //   cartItem &&
+                            //   cartItem.productID &&
+                            //   cartItem.productID.imageUrl
+                            // }
                             src={
-                              cartItem &&
-                              cartItem.productID &&
-                              cartItem.productID.imageUrl
-                            }
+  cartItem?.productID?.imageUrl
+}
+
                             alt="Product image"
                             className="h-24 w-25 max-w-full rounded-lg object-cover"
                           />
