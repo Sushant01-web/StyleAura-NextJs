@@ -3,7 +3,7 @@
 
 import Cookies from "js-cookie";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+// const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 
 export const uploadProductImage = async (file) => {
@@ -26,7 +26,7 @@ export const uploadProductImage = async (file) => {
 
 export const addNewProduct = async (formData) => {
   try {
-    const res = await fetch(`${API_URL}/api/admin/add-product`, {
+    const res = await fetch(`/api/admin/add-product`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +46,7 @@ export const addNewProduct = async (formData) => {
 /* ---------------- GET ALL ADMIN PRODUCTS ---------------- */
 export const getAllAdminProducts = async () => {
   try {
-    const res = await fetch(`${API_URL}/api/admin/all-products`, {
+    const res = await fetch(`/api/admin/all-products`, {
       method: "GET",
       cache: "no-store",
     });
@@ -58,10 +58,13 @@ export const getAllAdminProducts = async () => {
   }
 };
 
+// console.log("API_URL:", API_URL);
+
+
 /* ---------------- UPDATE PRODUCT ---------------- */
 export const updateAProduct = async (formData) => {
   try {
-    const res = await fetch(`${API_URL}/api/admin/update-product`, {
+    const res = await fetch(`/api/admin/update-product`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -82,7 +85,7 @@ export const updateAProduct = async (formData) => {
 export const deleteAProduct = async (id) => {
   try {
     const res = await fetch(
-      `${API_URL}/api/admin/delete-product?id=${id}`,
+      `/api/admin/delete-product?id=${id}`,
       {
         method: "DELETE",
         headers: {
@@ -102,7 +105,7 @@ export const deleteAProduct = async (id) => {
 export const productByCategory = async (category) => {
   try {
     const res = await fetch(
-      `${API_URL}/api/admin/product-by-category?category=${category}`,
+      `/api/admin/product-by-category?category=${category}`,
       {
         method: "GET",
         cache: "no-store",
@@ -120,7 +123,7 @@ export const productByCategory = async (category) => {
 export const productById = async (id) => {
   try {
     const res = await fetch(
-      `${API_URL}/api/admin/product-by-id?id=${id}`,
+      `/api/admin/product-by-id?id=${id}`,
       {
         method: "GET",
         cache: "no-store",
